@@ -1,7 +1,3 @@
-
-@font-face {
-}
-
 .navbarDiv{
     display: flex;
     flex-wrap: wrap;
@@ -15,6 +11,37 @@
     width: 100%;
     height: 60%;
     background-color: black;
+    justify-content: space-between;
+    align-content: center;
+}
+.logoDiv{
+    display: flex;
+    height: 80px;
+    width: 80px;
+    margin-left: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /*background-color: red;*/
+}
+.informationDiv{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100%;
+    width: content-box;
+    margin-right: 50px;
+    color: white;
+    align-content: center;
+}
+.phoneDiv{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+.emailDiv{
+
 }
 .underNavbarDiv{
     display: flex;
@@ -31,7 +58,7 @@
     height: 100%;
     width: 20%;
     color: white;
-    font-size: 25px;
+    font-size: 1.6vw;
     text-align: center;
     justify-content: center;
     align-content: center;
