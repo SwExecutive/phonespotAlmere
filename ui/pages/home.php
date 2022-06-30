@@ -13,9 +13,11 @@ $phone->setPhoneName("Samsung");
     <div class="phoneHeroDivBackground">
 
         <div class="phoneHeroDivTop">
-            <div class="questionDiv">
-
-
+            <div>
+                <div class="questionDiv">
+                    Waarmee kan ik u helpen?
+                </div>
+                <div class="questionDivPointer"></div>
             </div>
         </div>
 
@@ -42,13 +44,40 @@ $phone->setPhoneName("Samsung");
 
 
     </div>
+
+    <div class="menuDiv">
+        <div class="menuItemDiv" id="prijzenlijstMenuItemDiv">
+            Prijzenlijst
+        </div>
+        <div class="menuItemDiv" id="accessoiresMenuItemDiv">
+            Accessoires
+        </div>
+        <div class="menuItemDiv" id="telefoonsMenuItemDiv">
+            Telefoons
+        </div>
+        <div class="menuItemDiv" id="contactMenuItemDiv">
+            Contact
+        </div>
+    </div>
     <?php
-    print($phone->phoneName)
+//    print($phone->phoneName)
     ?>
 
 </div>
 <style>
     .heroDiv{
         background-image: url("src/logo/PhonespotalmereMascotteTransparent.png");
+    }
+    #prijzenlijstMenuItemDiv{
+        background-image: url("src/background/prijzenlijst_background.jpg");
+    }
+    #accessoiresMenuItemDiv{
+        background-image: url("src/background/accessoires_background.jpg");
+    }
+    #telefoonsMenuItemDiv{
+        background-image: url("src/background/tefeloons_background.jpg");
+    }
+    #contactMenuItemDiv{
+        background-image: url("src/background/contact_background.jpg");
     }
 </style>
