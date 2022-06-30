@@ -1,7 +1,7 @@
 .contentDiv{
     display: flex;
     flex-wrap: wrap;
-    height: 3300px;
+    height: 3000px;
     width: 100%;
     /*background-color: red;*/
     justify-content: center;
@@ -93,7 +93,6 @@
 .heroDiv{
     display: flex;
     flex-wrap: wrap;
-    /*left: auto;*/
     height: 400px;
     width: 300px;
     background-position: center;
@@ -119,6 +118,12 @@
     margin: auto;
 
 }
+.menuItemDivLink,.menuItemDivLink:visited,.menuItemDivLink:hover,.menuItemDivLink:active{
+    text-decoration: none;
+    font-size: 60px;
+    color: #C53535;
+    font-weight: bold;
+}
 .menuDiv{
     display: flex;
     flex-wrap: wrap;
@@ -127,7 +132,6 @@
     margin-top: 100px;
     margin-left: 50px;
     margin-right: 50px;
-    background-color: red;
     justify-content: space-between;
     align-content: space-between;
 }
@@ -140,11 +144,260 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: blue;
-    cursor:pointer;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .menuItemDiv:hover{
     transition: 0.5s;
     transform: scale(1.1);
+}
+
+.meuItemDivBanner{
+    display: flex;
+    height: 30%;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.splitterDiv{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    height: 100px;
+    width: 100%;
+    background-color: #C53535;
+    justify-content: center;
+}
+.splitterDivText{
+    display: flex;
+    height: 100%;
+    width: 30%;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.timerDiv{
+    display: flex;
+    height: 100%;
+    width: 10%;
+    font-size: 25px;
+    color: white;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.timerDivIcon{
+    display: flex;
+    height: 100%;
+    width: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.splitterDivHero{
+    display: flex;
+    height: 150px;
+    width: 150px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translate(210px,-50px);
+
+}
+.tutorialDivBackground{
+    display: flex;
+    height: 1400px;
+    width: 100%;
+    background-repeat: repeat;
+    justify-content: center;
+    align-items: center;
+}
+
+.tutorialDiv{
+    display: flex;
+    flex-wrap: wrap;
+    height: 1200px;
+    width: 1100px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.tutorialDivLeft{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 50%;
+    align-content: space-between;
+}
+
+.tutorialDivStepWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    width: 300px;
+    border-radius: 50%;
+    overflow: visible;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.tutorialDivStep{
+    display: flex;
+    height: 300px;
+    width: 100%;
+    border-radius: 50%;
+    background-color: white;
+    border: 4px solid #C53535;
+    overflow: hidden;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.stepCounter{
+    display: flex;
+    height: 100px;
+    width: 100px;
+    color: white;
+    font-size: 50px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #C53535;
+    transform: translate(0px,-60px);
+}
+.tutorialDivStepBanner{
+    display: flex;
+    width: 100%;
+    height: 35%;
+    background-color: #C53535;
+    color: white;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    font-size: 25px;
+    text-align: center;
+}
+.tutorialDivRight{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 50%;
+    align-content: space-between;
+    align-items: center;
+    justify-content: right;
+}
+.openingTimeDiv{
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    border-radius: 20px;
+    border: 4px solid #C53535;
+    overflow: hidden;
+    justify-content: start;
+    align-content: start;
+}
+.openingTimeDivInfo{
+    display: flex;
+    width: 100%;
+    height: 15%;
+    background-color: white;
+    overflow: visible;
+    justify-content: space-between;
+    align-items: center;
+}
+.openingTimeDivInfoText{
+    display: flex;
+    margin-left: 30px;
+    align-items: center;
+    color: black;
+    font-size: 35px;
+    font-weight: bolder;
+}
+.openingTimeDivInfoIcon{
+    display: flex;
+    height: 100%;
+    width: 20%;
+    margin-right: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.openingTimeTable{
+    display: flex;
+    flex-wrap: wrap;
+    height: 80%;
+    width: 100%;
+    font-weight: bolder;
+    font-size: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+}
+.openingTimeTableDays{
+    display: flex;
+    height: 10%;
+    width: 40%;
+    align-items: center;
+}
+.openingTimeTableHours{
+    display: flex;
+    height: 14%;
+    width: 40%;
+    align-items: center;
+
+}
+.locationDiv{
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    border-radius: 20px;
+    border: 4px solid #C53535;
+    overflow: hidden;
+}
+.locationDivInfo{
+    display: flex;
+    width: 100%;
+    height: 15%;
+    background-color: white;
+    overflow: visible;
+    justify-content: space-between;
+    align-items: center;
+}
+.locationDivInfoText{
+    display: flex;
+    margin-left: 30px;
+    align-items: center;
+    color: black;
+    font-size: 35px;
+    font-weight: bolder;
+}
+.locationDivInfoIcon{
+    display: flex;
+    height: 100%;
+    width: 20%;
+    margin-right: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

@@ -10,9 +10,18 @@
 </head>
 <body>
 <?php
+$currentPage = 'ui/pages/home.php';
+
+function getPage($url){
+    if ($url)
+    $currentPage = include 'ui/pages/home.php';
+
+    return $currentPage;
+}
+
 include "ui/navigation/topNavbar.php";
-include "ui/pages/home.php";
-include "ui/navigation/bottomNavbar.php.php";
+include $currentPage;
+include "ui/navigation/bottomNavbar.php";
 ?>
 </body>
 </html>
