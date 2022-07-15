@@ -116,6 +116,9 @@
     height: 40%;
     border-radius: 20px;
     margin: auto;
+    font-size: 22px;
+    font-weight: normal;
+    text-align: center;
 
 }
 .menuItemDivLink,.menuItemDivLink:visited,.menuItemDivLink:hover,.menuItemDivLink:active{
@@ -202,6 +205,18 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+}
+.bounce {
+    animation: bounce 2s ease infinite;
+}
+@keyframes bounce {
+    70% { transform:translateY(0%); }
+    80% { transform:translateY(-15%); }
+    90% { transform:translateY(0%); }
+    95% { transform:translateY(-7%); }
+    97% { transform:translateY(0%); }
+    99% { transform:translateY(-3%); }
+    100% { transform:translateY(0); }
 }
 .splitterDivHero{
     display: flex;

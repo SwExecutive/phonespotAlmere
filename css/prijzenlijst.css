@@ -1,0 +1,11 @@
+.contentDiv{
+    display: flex;
+    flex-wrap: wrap;
+    height: 3000px;
+    width: 100%;
+    /*background-color: red;*/
+    justify-content: center;
+    align-content: flex-start;
+    padding-top: 150px;
+
+}

@@ -1,5 +1,6 @@
 <?php
 include "model/Phone.php";
+include "functions/navigator.php";
 include_once "model/PhonespotAlmere.php";
 
 $phone = new Phone();
@@ -19,7 +20,7 @@ $phone->setPhoneName("Samsung");
             <div class="phoneHeroDivTop">
                 <div>
                     <div class="questionDiv">
-                        Waarmee kan ik u helpen?
+                       Welkom! Waarmee kan ik u helpen?
                     </div>
                     <div class="questionDivPointer"></div>
                 </div>
@@ -31,16 +32,19 @@ $phone->setPhoneName("Samsung");
                 </div>
                 <div class="answersDiv">
                     <button class="answerButton">
-
+<?php
+echo $_SERVER["REQUEST_URI"];
+?>
+<!--                        Ik wil mijn apparaat laten repareren-->
                     </button>
                     <button class="answerButton">
-
+                    Ik zoek een accessoire voor mijn telefoon
                     </button>
                     <button class="answerButton">
-
+                    Ik wil een telefoon kopen
                     </button>
                     <button class="answerButton">
-
+                    Overig
                     </button>
                 </div>
             </div>
@@ -50,7 +54,7 @@ $phone->setPhoneName("Samsung");
     </div>
 
     <div class="menuDiv">
-        <a href="" class="menuItemDivLink">
+        <a href="index.php?/prijzenlijst" class="menuItemDivLink">
             <div class="menuItemDiv" id="prijzenlijstMenuItemDiv">
                 <div class="meuItemDivBanner">
                     Prijzenlijst
@@ -85,7 +89,7 @@ $phone->setPhoneName("Samsung");
             Hoe gaan wij te werk?
         </div>
         <div class="timerDiv">
-            <div class="timerDivIcon"></div>
+            <div class="timerDivIcon bounce"></div>
             30s
         </div>
         <div class="splitterDivHero">

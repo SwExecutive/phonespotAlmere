@@ -38,14 +38,31 @@
     align-content: center;
     justify-content: center;
 }
-.phoneDiv{
+.infoDiv{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    align-content: center;
+    align-items: center;
     width: 100%;
 }
-.emailDiv{
-
+.phoneIconDiv{
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+}
+.emailIconDiv{
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
 }
 .underNavbarDiv{
     display: flex;
