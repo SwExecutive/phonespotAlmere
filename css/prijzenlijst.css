@@ -56,22 +56,6 @@
     display: flex;
 }
 
-#prijzenlijstinstructionMerk{
-    display: none;
-
-}
-
-#prijzenlijstinstructionSerie{
-    display: none;
-
-}
-
-#prijzenlijstinstructionDevice{
-    display: none;
-
-}
-
-
 .prijzenlijstSelectionDiv{
     display: flex;
     height: 15%;
@@ -83,6 +67,8 @@
     align-items: center;
     flex-wrap: wrap;
     padding-top: 50px;
+    flex-direction: column;
+
 }
 
 .prijzenlijstSelectionOptionGroup{
@@ -99,7 +85,12 @@
 }
 #prijzenlijstSelectionGroup2{
     display: none;
-
+    height: 100%;
+    width: 80%;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
 }
 #prijzenlijstSelectionGroup3{
     display: none;
@@ -134,12 +125,18 @@
     display: flex;
     height: 200px;
     width: 200px;
-    background-color: red;
     /*background-color: white;*/
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 150px;
     align-items: end;
     font-size: 20px;
     font-weight: bold;
     justify-content: center;
+    margin: 30px;
+}
+.prijzenlijstSelectionOptionBrand:hover {
+    transition: 0.5s;
+    transform: scale(1.1);
+    cursor: pointer;
 }

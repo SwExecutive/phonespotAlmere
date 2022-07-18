@@ -6,10 +6,10 @@ include_once "model/PhonespotAlmere.php";
 $phoneSpotAlmere = new PhoneSpotAlmere();
 
 //echo phpinfo();
-$brands [] = getAllBrands();
-$phones []= getAllPhones();
-$tablets []= getAllTablets();
-;
+$brands = getAllBrands();
+$phones = getAllPhones();
+$tablets = getAllTablets();
+
 
 
 ?>
@@ -22,8 +22,8 @@ $tablets []= getAllTablets();
     <div class="prijzenlijstTitle">
         Prijzenlijst
         <?php
-            foreach (getAllBrands() as $brands){
-                echo $brands["brand_name"];
+            foreach ($brands as $brand){
+                echo $brand["brand_name"];
             }
 
         ?>
@@ -33,12 +33,6 @@ $tablets []= getAllTablets();
     <div class="prijzenlijstInstructionDiv">
         <div id="prijzenlijstinstruction" class="prijzenlijstInstructionDivQuestion">
             Selecteer uw apparaattype
-        </div>
-        <div id="prijzenlijstinstructionMerk" class="prijzenlijstInstructionDivQuestion">
-            Selecteer uw merk
-        </div>
-        <div id="prijzenlijstinstructionDevice" class="prijzenlijstInstructionDivQuestion">
-            Selecteer uw apparaat
         </div>
     </div>
 
@@ -58,15 +52,6 @@ $tablets []= getAllTablets();
         </div>
 
         <div id="prijzenlijstSelectionGroup2" class="prijzenlijstSelectionOptionGroup">
-            <div id="Samsung" class="prijzenlijstSelectionOptionBrand">
-
-            </div>
-
-            <div id="Apple" class="prijzenlijstSelectionOptionBrand">
-
-            </div>
-
-            <div id="Lenovo" class="prijzenlijstSelectionOptionBrand">
 
             </div>
         </div>
@@ -90,25 +75,29 @@ $tablets []= getAllTablets();
 </div>
 
 <script>
-    var brands = <?php echo json_encode($brands); ?>;
-    var phones = <?php echo json_encode($phones); ?>;
-    var tablets = <?php echo json_encode($tablets); ?>;
-
-    const questionList = ["Selecteer uw apparaattype","Selecteer uw merk","Selecteer uw apparaat"]
     $(document).ready(function() {
-        console.log(brands)
+        const brands = <?php echo json_encode($brands); ?>;
+        const phones = <?php echo json_encode($phones); ?>;
+        const tablets = <?php echo json_encode($tablets); ?>;
+        const questionList = ["Selecteer uw apparaattype","Selecteer uw merk","Selecteer uw apparaat"]
+
         $("#phone").click(function () {
             $("#prijzenlijstSelectionGroup1").css("display", "none")
             $("#prijzenlijstinstruction").empty().text(questionList[1]);
 
+
             $("#prijzenlijstSelectionGroup2").css("display", "flex")
-            $.each( brands, function() {
-                var counter = 0;
+            $.each( brands, function(index, item) {
+                $(".prijzenlijstSelectionDiv").css("height", "30%");
                 var e = $('<div></div>')
                 $("#prijzenlijstSelectionGroup2").append(e);
-                e.attr('id',brands[counter]['id_brand'])
+                e.attr('id',brands[index]['brand_name'])
                 e.attr('class','prijzenlijstSelectionOptionBrand')
-                counter++;
+                e.click(function(event) {
+                    alert(event.target.id);
+                });
+                $("#"+brands[index]['brand_name']).css("background-image", "url('"+brands[index]['brand_img']+"')")
+                console.log(item);
             });
         })
 
