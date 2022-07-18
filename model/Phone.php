@@ -3,6 +3,7 @@
 class Phone{
     public String $phoneName;
     public String $brandName;
+    public String $serie;
     public String $image;
     public String $inspectionOffer;
     public array $displayReplacements;

@@ -18,6 +18,6 @@ class navigator{
     }
 
     public function givePageUrl(String $pageName){
-        return $this->defaultURL+$this->pages[$pageName];
+        return "index.php?/" . $pageName;
     }
 }

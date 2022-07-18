@@ -1,11 +1,145 @@
 .contentDiv{
     display: flex;
     flex-wrap: wrap;
-    height: 3000px;
+    height: 1500px;
     width: 100%;
     /*background-color: red;*/
     justify-content: center;
     align-content: flex-start;
     padding-top: 150px;
 
+}
+.prijzenlijstTitleDiv{
+    display: flex;
+    height: 10%;
+    width: 100%;
+    /*background-color: blue;*/
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+.prijzenlijstTitle{
+    display: flex;
+    width: 35%;
+    height: 85%;
+    font-weight: bold;
+    font-size: 60px;
+    color: #C53535;
+    background-size: 80px;
+    background-position: left;
+    background-repeat: no-repeat;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    /*background-position-y: -15px;*/
+
+}
+
+.prijzenlijstInstructionDiv{
+    display: flex;
+    width: 100%;
+    background-color: #c53535;
+    color: white;
+    height: 5%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+}
+.prijzenlijstInstructionDivQuestion{
+    display: flex;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+#prijzenlijstinstruction{
+    display: flex;
+}
+
+#prijzenlijstinstructionMerk{
+    display: none;
+
+}
+
+#prijzenlijstinstructionSerie{
+    display: none;
+
+}
+
+#prijzenlijstinstructionDevice{
+    display: none;
+
+}
+
+
+.prijzenlijstSelectionDiv{
+    display: flex;
+    height: 15%;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 50px;
+}
+
+.prijzenlijstSelectionOptionGroup{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#prijzenlijstSelectionGroup1{
+    display: flex;
+}
+#prijzenlijstSelectionGroup2{
+    display: none;
+
+}
+#prijzenlijstSelectionGroup3{
+    display: none;
+
+}
+#prijzenlijstSelectionGroup4{
+    display: none;
+
+}
+.prijzenlijstSelectionOptionDevice{
+    display: flex;
+    height: 250px;
+    width: 250px;
+    border-radius: 20px;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px;
+    /*border: 4px solid rgba(0, 0, 0, 0.8);*/
+    /*border: 4px solid #c53535;*/
+    align-items: end;
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: center;
+}
+.prijzenlijstSelectionOptionDevice:hover {
+    transition: 0.5s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.prijzenlijstSelectionOptionBrand{
+    display: flex;
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    /*background-color: white;*/
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: end;
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: center;
 }
