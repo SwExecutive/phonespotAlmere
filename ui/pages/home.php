@@ -20,7 +20,7 @@ $phone->setPhoneName("Samsung");
             <div class="phoneHeroDivTop">
                 <div>
                     <div class="questionDiv">
-                       Welkom! Waarmee kan ik u helpen?
+                        Welkom! Waarmee kan ik u helpen?
                     </div>
                     <div class="questionDivPointer"></div>
                 </div>
@@ -32,19 +32,16 @@ $phone->setPhoneName("Samsung");
                 </div>
                 <div class="answersDiv">
                     <button class="answerButton">
-<?php
-echo $_SERVER["REQUEST_URI"];
-?>
-<!--                        Ik wil mijn apparaat laten repareren-->
+                        Ik wil mijn apparaat laten repareren
                     </button>
                     <button class="answerButton">
-                    Ik zoek een accessoire voor mijn telefoon
+                        Ik zoek een accessoire voor mijn telefoon
                     </button>
                     <button class="answerButton">
-                    Ik wil een telefoon kopen
+                        Ik wil een telefoon kopen
                     </button>
                     <button class="answerButton">
-                    Overig
+                        Overig
                     </button>
                 </div>
             </div>
@@ -198,9 +195,11 @@ echo $_SERVER["REQUEST_URI"];
         background-image: url("src/icon/timer_icon.svg");
 
     }
-.splitterDivHero{
-    background-image: url("src/logo/PhonespotalmereMascotteHeadTransparent.png");
-}
+
+    .splitterDivHero {
+        background-image: url("src/logo/PhonespotalmereMascotteHeadTransparent.png");
+    }
+
     .tutorialDivBackground {
         background-image: url("src/background/dark_stripes.png");
     }

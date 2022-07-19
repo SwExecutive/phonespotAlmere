@@ -22,7 +22,7 @@ $phonespotAlmere = new phonespotAlmere()
     </div>
 
     <div class="underNavbarDiv">
-        <div class="underNavbarDivItem">Prijzenlijst</div>
+        <a href="index.php?/prijzenlijst" class="underNavbarDivItem">Prijzenlijst</a>
         <div class="underNavbarDivItem">Accessoires</div>
         <div class="underNavbarDivItem">Te koop</div>
     </div>

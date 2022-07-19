@@ -32,6 +32,7 @@
     align-items: center;
     justify-content: center;
     /*background-position-y: -15px;*/
+    text-decoration: none;
 
 }
 
@@ -66,7 +67,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding-top: 50px;
+    padding-top: 30px;
     flex-direction: column;
 
 }
@@ -94,13 +95,16 @@
 }
 #prijzenlijstSelectionGroup3{
     display: none;
-
+    height: 100%;
+    width: 80%;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
 }
-#prijzenlijstSelectionGroup4{
-    display: none;
 
-}
-.prijzenlijstSelectionOptionDevice{
+
+.prijzenlijstSelectionOptionDeviceType{
     display: flex;
     height: 250px;
     width: 250px;
@@ -116,7 +120,7 @@
     font-weight: bold;
     justify-content: center;
 }
-.prijzenlijstSelectionOptionDevice:hover {
+.prijzenlijstSelectionOptionDeviceType:hover {
     transition: 0.5s;
     transform: scale(1.1);
     cursor: pointer;
@@ -139,4 +143,70 @@
     transition: 0.5s;
     transform: scale(1.1);
     cursor: pointer;
+}
+
+.prijzenlijstSelectionOptionDevice{
+    display: flex;
+    height: 400px;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200px;
+    align-items: end;
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: center;
+    margin: 30px;
+}
+.prijzenlijstSelectionOptionDevice:hover {
+    transition: 0.5s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+#prijzenlijstSelectionGroup4{
+    display: none;
+    height: 100%;
+    width: 80%;
+    align-content: baseline;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+#deviceDetailImg{
+    display: flex;
+    height: 400px;
+    width: 100%;
+    /*background-color: white;*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    align-items: end;
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: center;
+    margin: 30px;
+}
+.deviceDetailInfoRowWrapper{
+    display: flex;
+    height: 5%;
+    width: 100%;
+    font-size: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 10px;
+}
+.deviceDetailInfoRow{
+    display: flex;
+    height: 100%;
+    width: 30%;
+    font-size: 20px;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 10px;
+}
+.deviceDetailInfoRowName{
+    font-weight: bold;
 }

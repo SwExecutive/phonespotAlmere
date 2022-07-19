@@ -10,11 +10,11 @@ function getAllSeries(){
     return dbConnection($query)->fetch_all(MYSQLI_ASSOC);
 }
 function getAllPhones(){
-    $query = "SELECT * FROM phone";
+    $query = "SELECT * FROM device WHERE device_type = 'phone' ORDER BY brand_id ASC, name DESC";
     return dbConnection($query)->fetch_all(MYSQLI_ASSOC);
 }
 
 function getAllTablets(){
-    $query = "SELECT * FROM tablet";
+    $query = "SELECT * FROM device WHERE device_type = 'tablet' ORDER BY brand_id ASC, name DESC";
     return dbConnection($query)->fetch_all(MYSQLI_ASSOC);
 }
