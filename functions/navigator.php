@@ -13,7 +13,7 @@ class navigator{
 
         $this->pages["home"]="ui/pages/home.php";
         $this->pages["prijzenlijst"]="ui/pages/prijzenlijst.php";
-        $this->pages["beheer"]="ui/pages/beheer.php";
+        $this->pages["beheer"]="beheer.php";
 
     }
 

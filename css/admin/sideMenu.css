@@ -1,0 +1,105 @@
+a{
+    text-decoration: none;
+    color: #939393;
+
+}
+.sideMenuDiv{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    width: 300px;
+    height: 100%;
+    color: #939393;
+    justify-content: center;
+    font-size: 1.4vw;
+}
+.companyName{
+    display: flex;
+    width: 100%;
+    height: 10%;
+    color: #c53535;
+    align-content: center;
+    justify-content: left;
+    margin-left: 30px;
+    margin-top: 30px;
+
+}
+.menuItems{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-content: center;
+    justify-content: left;
+    padding-left: 30px;
+}
+
+.menuItem{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-content: center;
+    justify-content: left;
+    margin-bottom: 30px;
+}
+.divider{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-content: center;
+    justify-content: left;
+    padding-left: 30px;
+    /*align-content: center;*/
+    justify-content: left;
+    margin-bottom: 30px;
+}
+.dividerline{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    height: 4px;
+    align-content: center;
+    justify-content: left;
+    border-radius: 4px;
+    background-color: #939393;
+}
+.menuNecessities{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-content: center;
+    justify-content: left;
+    padding-left: 30px;
+
+}
+
+.menuNecessityItem{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-content: center;
+    justify-content: left;
+    margin-bottom: 30px;
+    padding-left: 50px;
+    background-size: 30px;
+    background-repeat: no-repeat;
+}
+.menuLogoutContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-content: center;
+    justify-content: left;
+    padding-left: 30px;
+}
+.menuLogout{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-content: center;
+    justify-content: left;
+    padding-left: 50px;
+    padding-bottom: 30px;
+    align-self: flex-end;
+    background-size: 30px;
+    background-repeat: no-repeat;
+}

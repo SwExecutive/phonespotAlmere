@@ -5,7 +5,6 @@ include_once "model/PhonespotAlmere.php";
 
 $phoneSpotAlmere = new PhoneSpotAlmere();
 
-//echo phpinfo();
 $brands = getAllBrands();
 $phones = getAllPhones();
 $tablets = getAllTablets();
@@ -219,10 +218,6 @@ $tablets = getAllTablets();
 
 
     });
-
-    function givePrijzenlijstSurveyData(phones, tablets, laptops, brands) {
-
-    }
 </script>
 
 <style>

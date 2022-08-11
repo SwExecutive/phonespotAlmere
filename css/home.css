@@ -27,18 +27,22 @@
     border-radius: 20px;
     overflow: visible;
 }
+.phoneHeroDivBackground::-webkit-scrollbar{
+    width: 10px;
+}
+.phoneHeroDivBackground::-webkit-scrollbar-track{
+    background: none;
+}
+.phoneHeroDivBackground::-webkit-scrollbar-thumb{
+    background: #C53535;
+}
+.phoneHeroDivBackground::-webkit-scrollbar-thumb:hover{
+    background: #8c2626;
+}
 .phoneHeroDivTop{
     display: flex;
     width: 100%;
     height: 40%;
-}
-.questionDiv{
-    /*position: absolute;*/
-    width: 354.5px;
-    height: 225px;
-    left: 343.5px;
-    top: 199px;
-    background: #C4C4C4;
 }
 .questionDiv {
     height: 190px;
@@ -48,6 +52,7 @@
     margin-top: 50px;
     font-size: 30px;
     display: flex;
+    padding: 10px;
     justify-content: center;
     align-content: center;
     align-items: center;
@@ -109,17 +114,168 @@
     max-height: 100%;
     min-width: 70%;
     align-content: space-evenly;
-
+    justify-content: center;
+    overflow-x: hidden;
+}
+.answersDiv::-webkit-scrollbar{
+    width: 10px;
+}
+.answersDiv::-webkit-scrollbar-track{
+   background: none;
+}
+.answersDiv::-webkit-scrollbar-thumb{
+    background: #C53535;
+}
+.answersDiv::-webkit-scrollbar-thumb:hover{
+    background: #8c2626;
 }
 .answerButton{
+    display: flex;
     width: 40%;
     height: 40%;
     border-radius: 20px;
     margin: auto;
     font-size: 22px;
-    font-weight: normal;
     text-align: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color: white;
+    font-weight: normal;
 
+}
+.answerButton:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
+    cursor: pointer;
+    color: #C53535;
+}
+.deviceTypeSelectDiv{
+    display: flex;
+    width: 230px;
+    height: 230px;
+    border-radius: 130px;
+    margin: auto;
+    font-size: 22px;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    align-items: end;
+    background-color: white;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 170px;
+    border: 3px solid #C53535;
+}
+.deviceTypeSelectDiv:hover{
+    transition: 0.5s;
+    border: 3px solid #C53535;
+    transform: scale(1.1);
+    cursor: pointer;
+    color: #C53535;
+}
+
+.brandSelectDiv{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin: 20px;
+    font-size: 22px;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    align-items: end;
+    background-color: white;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70px;
+    border: 3px solid #C53535;
+}
+
+.brandSelectDiv:hover{
+    transition: 0.5s;
+    border: 3px solid #C53535;
+    transform: scale(1.1);
+    cursor: pointer;
+    color: #C53535;
+}
+.deviceSelectDiv{
+    display: flex;
+    width: 80%;
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 25px;
+    padding-left: 10px;
+    font-size: 22px;
+    text-align: center;
+    justify-content: left;
+    align-content: center;
+    align-items: center;
+    background-color: white;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70px;
+    border: 1px solid #C53535;
+}
+.deviceSelectDiv:hover{
+    transition: 0.5s;
+    border: 3px solid #C53535;
+    transform: scale(1.1);
+    cursor: pointer;
+    color: #C53535;
+}
+#deviceDetailTitle{
+    display: flex;
+    width: 100%;
+    height: 10%;
+    font-size: 30px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#deviceDetailImg{
+    display: flex;
+    height: 300px;
+    width: 30%;
+    /*background-color: white;*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    align-items: end;
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.deviceDetailInfoRowWrapper{
+    display: flex;
+    height: 5%;
+    width: 100%;
+    font-size: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 10px;
+}
+.deviceDetailInfoRow{
+    display: flex;
+    height: 100%;
+    width: 50%;
+    font-size: 20px;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 10px;
+}
+.deviceDetailInfoRowName{
+    font-weight: bold;
 }
 .menuItemDivLink,.menuItemDivLink:visited,.menuItemDivLink:hover,.menuItemDivLink:active{
     text-decoration: none;
