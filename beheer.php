@@ -12,6 +12,8 @@
 <body>
 <?php
 require "vm/beheerViewModel.php";
+
+loginCheck();
 $url = "";
 
 include "ui/navigation/admin/sideMenu.php";

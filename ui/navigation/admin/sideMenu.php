@@ -19,7 +19,7 @@
     <a href="beheer.php?/settings" class="menuNecessityItem menuSettingsItem">Instellingen</a>
     </div>
     <div class="menuLogoutContainer">
-        <a href="" class="menuLogout">Uitloggen</a>
+        <a href="ui/pages/admin/uitloggen.php" class="menuLogout">Uitloggen</a>
     </div>
 
 </div>

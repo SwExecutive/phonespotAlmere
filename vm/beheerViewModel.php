@@ -1,15 +1,25 @@
 <?php
 
 function loginCheck(){
+    session_start();
 
+if ($_SESSION["login"]=="true"){
+    return true;
+} elseif (!isset($_SESSION['login'])||!$_SESSION["login"]=="true"){
+    header("Location: ./ui/pages/admin/login.php");
+    return false;
+}
+return false;
 }
 
 function login(){
-
+    session_start();
+    $_SESSION["login"]="true";
 }
 
 function logout(){
-
+    session_start();
+    unset($_SESSION["login"]);
 }
 
 function getAdminPage($url){
