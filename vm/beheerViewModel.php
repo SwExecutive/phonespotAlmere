@@ -15,11 +15,13 @@ return false;
 function login(){
     session_start();
     $_SESSION["login"]="true";
+    $_SESSION["loginTime"]= date("d-m-Y H:i:s", strtotime('+1 day', time()+7200));
 }
 
 function logout(){
     session_start();
     unset($_SESSION["login"]);
+    unset($_SESSION["loginTime"]);
 }
 
 function getAdminPage($url){
@@ -50,7 +52,9 @@ function getAdminPage($url){
     if(strpos($_SERVER['REQUEST_URI'], "settings")) {
         $currentPage = 'ui/pages/admin/settings.php';
     }
-
+    if(strpos($_SERVER['REQUEST_URI'], "device")) {
+        $currentPage = 'ui/pages/admin/device.php';
+    }
     return $currentPage;
 }
 ?>
