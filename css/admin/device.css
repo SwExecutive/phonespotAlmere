@@ -3,17 +3,27 @@
     width: 80%;
     height: 100%;
     flex-wrap: wrap;
+    overflow-y: auto;
     justify-content: center;
     align-content: space-between;
 }
 
-.deviceDiv{
+.deviceForm{
     display: flex;
     flex-wrap: wrap;
-    height: 80%;
     margin-top: 30px;
     margin-left: 30px;
+    height: 80%;
     overflow-y: scroll;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
     width: 100%;
+    /*background-color: blue;*/
+    justify-content: center;
+}
+.deviceInput{
+    display: flex;
+    width: 50%;
+    height: 30px;
+    margin-top: 20px;
+border-radius: 5px;
 }
