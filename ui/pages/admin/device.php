@@ -1,9 +1,10 @@
 <?php
 include "repository/phonespotRepository.php";
 
-$id = $_GET['id'];
-
-$device = getDevice($id);
+if (isset($_GET["id"])){
+    $id= $_GET["id"];
+    $device = getDevice($id);
+}
 $brands = getAllBrands();
 ?>
 <link rel="stylesheet" href="css/admin/device.css" type="text/css"/>
@@ -11,11 +12,10 @@ $brands = getAllBrands();
 
 <div class="deviceContainer">
 
-    <form class="deviceForm" id="editDeviceForm" action="ui/pages/admin/deviceHandler.php" method="post"
-          enctype="multipart/form-data">
-
+    <form class="deviceForm" id="editDeviceForm" action="ui/pages/admin/deviceHandler.php?" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id_device" value="'<?php echo $device['id_device']?>'" />
+        <input type="hidden" name="id_serie" value="'<?php echo $device['serie_id']?>'" />
         <div class="currentImage"></div>
-
 
         <div class="inputcontainer">
             <div class="deviceInputName">Afbeelding</div>
@@ -153,6 +153,6 @@ $brands = getAllBrands();
 </div>
 <style>
     .currentImage{
-        background-image: url("<?php echo $device['device_img']?>");
+        background-image: url("<?php echo "src/devices/".$device['device_img']?>");
     }
 </style>

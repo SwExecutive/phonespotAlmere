@@ -100,7 +100,7 @@ $tablets = getAllTablets();
                 $("#prijzenlijstSelectionGroup2").append(e);
                 e.attr('id', brands[index]['id_brand'])
                 e.attr('class', 'prijzenlijstSelectionOptionBrand')
-                $("#" + brands[index]['id_brand']).css("background-image", "url('" + brands[index]['brand_img'] + "')")
+                $("#" + brands[index]['id_brand']).css("background-image", "url('src/devicebrands/" + brands[index]['brand_img'] + "')")
 
                 //For each brand that is retrieved add an onclick listener
                 e.click(function (event) {
@@ -115,14 +115,14 @@ $tablets = getAllTablets();
                             $("#prijzenlijstSelectionGroup3").append(deviceDiv);
                             deviceDiv.attr('id', "device" + phoneItem['id_device'])
                             deviceDiv.attr('class', 'prijzenlijstSelectionOptionDevice')
-                            $("#" + "device" + phoneItem['id_device']).css("background-image", "url('" + phoneItem['device_img'] + "')").text(phoneItem['name'])
+                            $("#" + "device" + phoneItem['id_device']).css("background-image", "url('src/devices/" + phoneItem['device_img'] + "')").text(phoneItem['name'])
 
                             deviceDiv.click(function (event){
                                 $("#prijzenlijstinstruction").empty().text(phoneItem['name']);
                                 $(".prijzenlijstSelectionDiv").css("height", "40%");
                                 $("#prijzenlijstSelectionGroup3").css("display", "none")
                                 $("#prijzenlijstSelectionGroup4").css("display", "flex")
-                                $("#deviceDetailImg").css("background-image", "url('" + phoneItem['device_img'] + "')")
+                                $("#deviceDetailImg").css("background-image", "url('src/devices/" + phoneItem['device_img'] + "')")
 
                                 $.each(phoneItem, function (phoneDetailIndex, phoneDetailItem){
                                     if (services[phoneDetailIndex]){
@@ -164,7 +164,7 @@ $tablets = getAllTablets();
                 $("#prijzenlijstSelectionGroup2").append(e);
                 e.attr('id', brands[index]['id_brand'])
                 e.attr('class', 'prijzenlijstSelectionOptionBrand')
-                $("#" + brands[index]['id_brand']).css("background-image", "url('" + brands[index]['brand_img'] + "')")
+                $("#" + brands[index]['id_brand']).css("background-image", "url('src/devicebrands/" + brands[index]['brand_img'] + "')")
 
                 //For each brand that is retrieved add an onclick listener
                 e.click(function (event) {
@@ -179,14 +179,14 @@ $tablets = getAllTablets();
                             $("#prijzenlijstSelectionGroup3").append(deviceDiv);
                             deviceDiv.attr('id', "device" + tabletItem['id_device'])
                             deviceDiv.attr('class', 'prijzenlijstSelectionOptionDevice')
-                            $("#" + "device" + tabletItem['id_device']).css("background-image", "url('" + tabletItem['device_img'] + "')").text(tabletItem['name'])
+                            $("#" + "device" + tabletItem['id_device']).css("background-image", "url('src/devices/" + tabletItem['device_img'] + "')").text(tabletItem['name'])
 
                             deviceDiv.click(function (event){
                                 $("#prijzenlijstinstruction").empty().text(tabletItem['name']);
                                 $(".prijzenlijstSelectionDiv").css("height", "40%");
                                 $("#prijzenlijstSelectionGroup3").css("display", "none")
                                 $("#prijzenlijstSelectionGroup4").css("display", "flex")
-                                $("#deviceDetailImg").css("background-image", "url('" + tabletItem['device_img'] + "')")
+                                $("#deviceDetailImg").css("background-image", "url('src/devices/" + tabletItem['device_img'] + "')")
 
                                 $.each(tabletItem, function (tabletDetailIndex, tabletDetailItem){
                                     if (services[tabletDetailIndex]){

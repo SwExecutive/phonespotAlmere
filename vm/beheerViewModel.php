@@ -39,10 +39,15 @@ function getAdminPage($url){
     if(strpos($_SERVER['REQUEST_URI'], "laptops")) {
         $currentPage = 'ui/pages/admin/laptops.php';
     }
+    if(strpos($_SERVER['REQUEST_URI'], "device")) {
+        $currentPage = 'ui/pages/admin/device.php';
+    }
     if(strpos($_SERVER['REQUEST_URI'], "merken")) {
         $currentPage = 'ui/pages/admin/merken.php';
     }
-
+    if(strpos($_SERVER['REQUEST_URI'], "brand")) {
+        $currentPage = 'ui/pages/admin/brand.php';
+    }
     if(strpos($_SERVER['REQUEST_URI'], "companyinfo")) {
         $currentPage = 'ui/pages/admin/companyinfo.php';
     }
@@ -52,9 +57,7 @@ function getAdminPage($url){
     if(strpos($_SERVER['REQUEST_URI'], "settings")) {
         $currentPage = 'ui/pages/admin/settings.php';
     }
-    if(strpos($_SERVER['REQUEST_URI'], "device")) {
-        $currentPage = 'ui/pages/admin/device.php';
-    }
+
     return $currentPage;
 }
 ?>
