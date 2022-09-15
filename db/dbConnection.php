@@ -1,6 +1,6 @@
 <?php
 
-function dbConnection($query){
+function dbConnection(){
     $servername = "91.184.19.144";
     $database = "p513495_phonespotalmere";
     $username = "p513495_SwExecut";
@@ -9,15 +9,10 @@ function dbConnection($query){
 // Create connection
 
     $conn = new mysqli($servername, $username, $password, $database, 3306);
-
     // Check connection
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
-    $result = $conn->query($query);
-
-    $conn->close();
-    return $result;
+    return $conn;
 }

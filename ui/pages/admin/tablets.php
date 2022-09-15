@@ -16,6 +16,7 @@ $tablets = getAllTablets();
 
 
     <div class="telefoonsDisplayDiv">
+        <div class="pageNameDisplayDiv">Tablets</div>
         <?php
 
         $brandlessDevices = [];
@@ -28,7 +29,7 @@ $tablets = getAllTablets();
 
                 foreach ($tablets as $tablet){
                     if ($tablet["brand_id"]==$brand["id_brand"]&& $tablet["serie_id"]=="0"){
-                        array_push($brandlessDevices, $tablet);
+                        $brandlessDevices[]= $tablet;
                     }
                 }
                 foreach ($series as $serie){

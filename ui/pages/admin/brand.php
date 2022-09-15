@@ -12,8 +12,9 @@ $brands = getAllBrands();
 
 <div class="deviceContainer">
 
-    <form class="deviceForm" id="editDeviceForm" action="ui/pages/admin/deviceHandler.php?" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="id_device" value="'<?php echo $brand['id_brand']?>'" />
+    <form class="deviceForm" id="editBrandForm" action="ui/pages/admin/brandHandler.php?" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id_brand" value="'<?php echo $brand['id_brand']?>'" />
+        <input type="hidden" name="existingImg" value="'<?php echo $brand['brand_img']?>'" />
         <div class="currentImage"></div>
 
         <div class="inputcontainer">
@@ -23,16 +24,27 @@ $brands = getAllBrands();
 
         <div class="inputcontainer">
             <div class="deviceInputName">Naam</div>
-            <input type="text" name="deviceName" placeholder="Apparaat naam" id="deviceName" class="deviceInput" value="<?php echo $brand['brand_name']?>">
+            <input type="text" name="brandName" placeholder="Apparaat naam" id="deviceName" class="deviceInput" value="<?php echo $brand['brand_name']?>">
         </div>
     </form>
 
-
-    <div class="CRUDMenuDiv">
-        <div class="CRUDButton deleteButton">Verwijder</div>
-        <!--<div class="CRUDButton editButton">Aanpassen</div>-->
-        <button type="submit" form="editDeviceForm" class="CRUDButton addButton">Opslaan</button>
-    </div>
+    <?php
+    if (isset($_GET["id"])){
+        ?>
+        <div class="CRUDMenuDiv">
+            <button type="submit" form="editBrandForm" class="CRUDButton deleteButton" name="deleteButton" value="delete">Verwijder</button>
+            <button type="submit" form="editBrandForm" class="CRUDButton updateButton" name="updateButton" value="edit">Opslaan</button>
+        </div>
+        <?php
+    }else{
+        ?>
+        <div class="CRUDMenuDiv">
+            <button type="submit" form="editBrandForm" class="CRUDButton deleteButton" name="cancelButton" value="cancel">Annuleer</button>
+            <button type="submit" form="editBrandForm" class="CRUDButton updateButton" name="addButton" value="add">Voeg toe</button>
+        </div>
+        <?php
+    }
+    ?>
 </div>
 <style>
     .currentImage{

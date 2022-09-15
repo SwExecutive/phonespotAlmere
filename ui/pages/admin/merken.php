@@ -13,8 +13,8 @@ $brands = getAllBrands();
 
 <div class="merkenDiv">
 
-
     <div class="merkenDisplayDiv">
+        <div class="pageNameDisplayDiv">Merken</div>
         <?php
 
         $brandlessDevices = [];
