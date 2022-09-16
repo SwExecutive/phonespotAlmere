@@ -3,7 +3,7 @@ include "../../../repository/phonespotRepository.php";
 if (isset($_POST['deleteButton'])){
 
     deleteDevice(trimAndCast($_POST['id_device']));
-
+    deleteScreens(trimAndCast($_POST['id_device']));
     header("Location: ../../../beheer.php?/".(deviceHeaderRoute($_POST['device_type'])));
 
 } else {
@@ -36,6 +36,11 @@ if (isset($_POST['deleteButton'])){
             $_POST['device_type'],
             "Tijdelijk",
         );
+        $screens=getScreens(trimAndCast($_POST['id_device']));
+        for ($x = 0,$counter=0; $x <= 2; $x++) {
+            $counter++;
+            updateScreen($screens[$x]['id_screen'],trimAndCast($_POST['id_device']),$_POST['schermnaam'.$counter],trimAndCast($_POST['schermprijs'.$counter]),trimAndCast($_POST['screenActive'.$counter]));
+        }
         header("Location: ../../../beheer.php?/".(deviceHeaderRoute($_POST['device_type'])));
     }
     else{
@@ -100,6 +105,11 @@ if (isset($_POST['deleteButton'])){
                 $_POST['device_type'],
                 "Tijdelijk",
             );
+                $screens=getScreens(trimAndCast($_POST['id_device']));
+                for ($x = 0,$counter=0; $x <= 2; $x++) {
+                    $counter++;
+                    updateScreen($screens[$x]['id_screen'],trimAndCast($_POST['id_device']),$_POST['schermnaam'.$counter],trimAndCast($_POST['schermprijs'.$counter]),trimAndCast($_POST['screenActive'.$counter]));
+                }
         } elseif(isset($_POST['addButton'])){
                 insertDevice(
                     $_POST['deviceName'],
@@ -128,6 +138,15 @@ if (isset($_POST['deleteButton'])){
                     $_POST['device_type'],
                     "Tijdelijk",
                 );
+                $lastDeviceId = getLastDevice()[0];
+                for ($x = 0,$counter=0; $x <= 2; $x++) {
+                    $counter++;
+                    if (isset($_POST['screenActive'.$counter])){
+                        insertScreen(trimAndCast($lastDeviceId),$_POST['schermnaam'.$counter]??null,trimAndCast($_POST['schermprijs'.$counter])??null,trimAndCast($_POST['screenActive'.$counter])??null);
+                    }else{
+                        insertScreen(trimAndCast($lastDeviceId),$_POST['schermnaam'.$counter]??null,trimAndCast($_POST['schermprijs'.$counter])??null,null);
+                    }
+                }
             }
 
             header("Location: ../../../beheer.php?/".(deviceHeaderRoute($_POST['device_type'])));

@@ -34,6 +34,60 @@
     justify-content: center;
     align-items: center;
 }
+.screenInputContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 140px;
+    justify-content: center;
+    align-content: center;
+}
+.screenInputNameHolder{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
+    align-content: center;
+}
+.screenInputHolder{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    align-content: center;
+}
+.screenDeviceInput{
+    display: flex;
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.screenDeviceInputBottomRight{
+    display: flex;
+    width: 50%;
+    height: 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.screenDeviceCheckboxBottomRight{
+    display: flex;
+    width: 50%;
+    height: 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.screenDeviceInputHolderBottomRight{
+    display: flex;
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: baseline;
+}
 .inputcontainer{
     display: flex;
     width: 100%;
@@ -49,6 +103,7 @@
     align-items: center;
     justify-content: flex-start;
 }
+
 .deviceInput{
     display: flex;
     width: 30%;
@@ -56,6 +111,7 @@
     margin-top: 20px;
     border-radius: 5px;
 }
+
 select{
     display: flex;
     width: 30%;

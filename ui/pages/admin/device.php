@@ -4,6 +4,8 @@ include "repository/phonespotRepository.php";
 if (isset($_GET["id"])){
     $id= $_GET["id"];
     $device = getDevice($id);
+    $screens = getScreens($id);
+//    printf($screens[0]["screen_name"]);
 }
 $brands = getAllBrands();
 ?>
@@ -46,6 +48,30 @@ $brands = getAllBrands();
                 ?>
             </select>
         </div>
+
+<!--        Screens-->
+
+        <?php
+
+        for ($x = 0,$counter=0; $x <= 2; $x++){
+            $counter++;
+            ?>
+            <div class="screenInputContainer">
+                <div class="deviceInputName">Schermtype <?php echo $counter?></div>
+                <div class="screenInputHolder">
+                    <input type="text" name="schermnaam<?php echo $counter?>" placeholder="Schermnaam" id="inspection" class="screenDeviceInput" value="<?php echo $screens[$x]['screen_name']?>">
+                    <div class="screenDeviceInputHolderBottomRight">
+                        <input type="number" name="schermprijs<?php echo $counter?>" placeholder="Schermprijs" id="inspection" class="screenDeviceInputBottomRight" value="<?php echo $screens[$x]['screen_price']?>">
+                        <input type="checkbox" name="screenActive<?php echo $counter?>" id="screenActive<?php echo $screens[$x]['id_screen']?>"  value="1" <?php if ($screens[$x]['active']==1){echo "checked";} ?>>
+                        <label for="screenActive<?php echo $screens[$x]['id_screen']?>"> Scherm zichtbaar</label><br>
+                    </div>
+                </div>
+            </div>
+        <?php
+        }
+
+        ?>
+
             <div class="inputcontainer">
                 <div class="deviceInputName">Inspectie</div>
                 <input type="number" name="inspection" placeholder="Inspection" id="inspection" class="deviceInput" value="<?php echo $device['inspection']?>">

@@ -33,9 +33,11 @@ $brands = getAllBrands();
 
 
 
-    <?php
-    include "./ui/navigation/admin/CRUDMenuDevices.php";
+    <div class="CRUDMenuDiv">
+        <!--<div class="CRUDButton deleteButton">Verwijder</div>-->
+        <a href="beheer.php?&&/brand/" class="CRUDButton addButton">Nieuw toevoegen</a>
 
-    ?>
+    </div>
+
 </div>
 

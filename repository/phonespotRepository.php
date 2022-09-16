@@ -70,7 +70,67 @@ function getDevice($deviceId)
 
     return $result;
 }
+function getLastDevice(){
+    $conn = dbConnection();
 
+    $query = "SELECT id_device FROM device ORDER BY id_device DESC LIMIT 1;";
+    $result = $conn->query($query)->fetch_array();
+    $conn->close();
+
+    return $result;
+}
+function getScreens($deviceId){
+    $conn = dbConnection();
+
+    $query = "SELECT * FROM screen WHERE id_device = " . $deviceId . " ORDER BY screen_price ASC";
+    $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+    $conn->close();
+
+    return $result;
+}
+function insertScreen($id_device,$screen_name,$screen_price,$active){
+    $conn = dbConnection();
+    if (isset($id_device,$screen_name,$screen_price,$active)){
+        $query = "INSERT INTO screen (id_device, screen_name, screen_price, active) VALUES (?,?,?,?)";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("isii", $id_device,$screen_name,$screen_price,$active);
+
+    }elseif(isset($id_device,$screen_name,$screen_price)&&empty($active)){
+        $query = "INSERT INTO screen (id_device, screen_name, screen_price) VALUES (?,?,?)";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("isi", $id_device,$screen_name,$screen_price);
+
+    }else{
+        $query = "INSERT INTO screen (id_device) VALUES (?)";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("i", $id_device);
+    }
+    $stmt->execute();
+
+    $stmt->close();
+    $conn->close();
+}
+function updateScreen($id_screen,$id_device,$screen_name,$screen_price,$active){
+    $conn = dbConnection();
+    $query = "UPDATE screen SET id_device=?, screen_name=?, screen_price=?, active=? WHERE id_screen=?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("isiii", $id_device,$screen_name,$screen_price,$active,$id_screen);
+    $stmt->execute();
+
+    $stmt->close();
+    $conn->close();
+}
+function deleteScreens($deviceId)
+{
+    $conn = dbConnection();
+    $query = "DELETE FROM screen WHERE id_device=?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i",$deviceId);
+    $stmt->execute();
+
+    $stmt->close();
+    $conn->close();
+}
 function insertDevice($name, $brand_id, $serie_id, $device_img, $inspection,
                       $front_camera, $back_camera, $power_button, $battery,
                       $home_button, $vibration, $speaker, $ear_speaker,

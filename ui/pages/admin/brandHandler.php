@@ -2,9 +2,9 @@
 include "../../../repository/phonespotRepository.php";
 if (isset($_POST['deleteButton'])){
 
-    deleteDevice(trimAndCast($_POST['id_device']));
+    deleteBrand(trimAndCast($_POST['id_brand']));
 
-    header("Location: ../../../beheer.php?/".(deviceHeaderRoute($_POST['device_type'])));
+    header("Location: ../../../beheer.php?/merken");
 
 } else {
 

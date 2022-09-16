@@ -24,7 +24,7 @@ $brands = getAllBrands();
 
         <div class="inputcontainer">
             <div class="deviceInputName">Naam</div>
-            <input type="text" name="brandName" placeholder="Apparaat naam" id="deviceName" class="deviceInput" value="<?php echo $brand['brand_name']?>">
+            <input type="text" name="brandName" placeholder="Merknaam" id="deviceName" class="deviceInput" value="<?php echo $brand['brand_name']?>">
         </div>
     </form>
 
