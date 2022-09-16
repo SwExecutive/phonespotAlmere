@@ -4,8 +4,13 @@ if (isset($_POST['deleteButton'])){
 
     deleteDevice(trimAndCast($_POST['id_device']));
     deleteScreens(trimAndCast($_POST['id_device']));
-    header("Location: ../../../beheer.php?/".(deviceHeaderRoute($_POST['device_type'])));
+//    header("Location: ../../../beheer.php?/".(deviceHeaderRoute($_POST['device_type'])));
+    echo '<meta http-equiv="refresh" content="0;url=../../../beheer.php?/'.deviceHeaderRoute($_POST["device_type"]).'">';
 
+} elseif (isset($_POST['cancelButton'])){
+    echo "testing";
+//    header("Location: ../../../beheer.php?/".(deviceHeaderRoute($_POST['device_type'])));
+ echo '<meta http-equiv="refresh" content="0;url=../../../beheer.php?/'.deviceHeaderRoute($_POST["device_type"]).'">';
 } else {
     if (isset($_POST['existingImg'])&&!is_uploaded_file($_FILES["fileToUpload"]["tmp_name"])&&isset($_POST['updateButton'])){
         updateDevice(
@@ -41,7 +46,8 @@ if (isset($_POST['deleteButton'])){
             $counter++;
             updateScreen($screens[$x]['id_screen'],trimAndCast($_POST['id_device']),$_POST['schermnaam'.$counter],trimAndCast($_POST['schermprijs'.$counter]),trimAndCast($_POST['screenActive'.$counter]));
         }
-        header("Location: ../../../beheer.php?/".(deviceHeaderRoute($_POST['device_type'])));
+//        header("Location: ../../../beheer.php?/".(deviceHeaderRoute($_POST['device_type'])));
+        echo '<meta http-equiv="refresh" content="0;url=../../../beheer.php?/'.deviceHeaderRoute($_POST["device_type"]).'">';
     }
     else{
     $target_dir = "../../../src/devices/";
@@ -148,8 +154,8 @@ if (isset($_POST['deleteButton'])){
                     }
                 }
             }
-
-            header("Location: ../../../beheer.php?/".(deviceHeaderRoute($_POST['device_type'])));
+//            header("Location: ../../../beheer.php?/".(deviceHeaderRoute($_POST['device_type'])));
+            echo '<meta http-equiv="refresh" content="0;url=../../../beheer.php?/'.deviceHeaderRoute($_POST["device_type"]).'">';
 
         } else {
             echo "Sorry, het bestand die je probeerde te uploaden veroorzaakt een error. Ga terug naar de vorige pagina om je gegevens te behouden.";

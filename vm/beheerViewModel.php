@@ -7,6 +7,8 @@ if ($_SESSION["login"]=="true"){
     return true;
 } elseif (!isset($_SESSION['login'])||!$_SESSION["login"]=="true"){
     header("Location: ./ui/pages/admin/login.php");
+    echo '<meta http-equiv="refresh" content="0;url=./ui/pages/admin/login.php">';
+
     return false;
 }
 return false;
