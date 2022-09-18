@@ -6,9 +6,8 @@ function loginCheck(){
 if ($_SESSION["login"]=="true"){
     return true;
 } elseif (!isset($_SESSION['login'])||!$_SESSION["login"]=="true"){
-    header("Location: ./ui/pages/admin/login.php");
-    echo '<meta http-equiv="refresh" content="0;url=./ui/pages/admin/login.php">';
-
+//    header("Location: ./ui/pages/admin/login.php");
+//    echo '<meta http-equiv="refresh" content="0;url=./ui/pages/admin/login.php">';
     return false;
 }
 return false;
@@ -17,7 +16,7 @@ return false;
 function login(){
     session_start();
     $_SESSION["login"]="true";
-    $_SESSION["loginTime"]= date("d-m-Y H:i:s", strtotime('+1 day', time()+7200));
+    $_SESSION["loginTime"]= date("d-m-Y H:i:s");
 }
 
 function logout(){

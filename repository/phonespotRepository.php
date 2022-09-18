@@ -88,6 +88,16 @@ function getScreens($deviceId){
 
     return $result;
 }
+
+function getAllScreens(){
+    $conn = dbConnection();
+
+    $query = "SELECT * FROM screen ORDER BY id_device ASC, screen_price ASC";
+    $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+    $conn->close();
+
+    return $result;
+}
 function insertScreen($id_device,$screen_name,$screen_price,$active){
     $conn = dbConnection();
     if (isset($id_device,$screen_name,$screen_price,$active)){

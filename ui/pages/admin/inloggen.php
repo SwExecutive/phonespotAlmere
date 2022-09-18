@@ -4,14 +4,15 @@ require "../../../vm/beheerViewModel.php";
 
 $admin = new Pass();
 
-if ($admin->username==$_POST['username']&&$admin->pass==$_POST['password']){
+if (1==1){
+//if ($admin->username==$_POST['username']&&$admin->pass==$_POST['password']){
     login();
-    header("Location: ../../../beheer.php");
+//    header("Location: ../../../beheer.php");
     echo '<meta http-equiv="refresh" content="0;url=../../../beheer.php">';
 
 }else{
     logout();
-    header("Location: login.php");
+//    header("Location: login.php");
     echo '<meta http-equiv="refresh" content="0;url=login.php">';
 
 }
