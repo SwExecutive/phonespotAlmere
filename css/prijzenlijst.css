@@ -106,15 +106,15 @@
 
 .prijzenlijstSelectionOptionDeviceType{
     display: flex;
-    height: 16vw;
-    width: 14vw;
+    height: 13vw;
+    width: 13vw;
     border-radius: 20px;
     background-color: white;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 11vw;
+    background-size: 8vw;
     align-items: end;
-    font-size: 2vw;
+    font-size: 1.8vw;
     font-weight: bold;
     justify-content: center;
 }
@@ -125,11 +125,11 @@
 }
 .prijzenlijstSelectionOptionBrand{
     display: flex;
-    height: 14vw;
-    width: 14vw;
+    height: 11vw;
+    width: 12vw;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 11vw;
+    background-size: 8vw;
     align-items: end;
     font-size: 20px;
     font-weight: bold;
@@ -197,7 +197,7 @@
 .deviceDetailInfoRow{
     display: flex;
     height: 100%;
-    width: 30%;
+    width: 50%;
     font-size: 20px;
     justify-content: space-between;
     align-items: center;

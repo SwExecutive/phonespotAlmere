@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+require "vm/beheerViewModel.php";
+loginCheck();
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,9 +18,6 @@
 </head>
 <body>
 <?php
-require "vm/beheerViewModel.php";
-
-loginCheck();
 $url = "";
 
 include "ui/navigation/admin/sideMenu.php";

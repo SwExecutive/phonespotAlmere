@@ -1,13 +1,13 @@
 <?php
+//ini_set('display_errors', 1);
 
 function loginCheck(){
     session_start();
-
 if ($_SESSION["login"]=="true"){
     return true;
 } elseif (!isset($_SESSION['login'])||!$_SESSION["login"]=="true"){
-//    header("Location: ./ui/pages/admin/login.php");
-//    echo '<meta http-equiv="refresh" content="0;url=./ui/pages/admin/login.php">';
+    header("Location: ./ui/pages/admin/login.php");
+    echo '<meta http-equiv="refresh" content="0;url=./ui/pages/admin/login.php">';
     return false;
 }
 return false;
@@ -61,4 +61,3 @@ function getAdminPage($url){
 
     return $currentPage;
 }
-?>
