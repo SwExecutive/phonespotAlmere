@@ -23,9 +23,9 @@
     width: 35%;
     height: 85%;
     font-weight: bold;
-    font-size: 60px;
+    font-size: 4vw;
     color: #C53535;
-    background-size: 80px;
+    background-size: 5vw;
     background-position: left;
     background-repeat: no-repeat;
     text-align: center;
@@ -106,17 +106,15 @@
 
 .prijzenlijstSelectionOptionDeviceType{
     display: flex;
-    height: 250px;
-    width: 250px;
+    height: 16vw;
+    width: 14vw;
     border-radius: 20px;
     background-color: white;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 150px;
-    /*border: 4px solid rgba(0, 0, 0, 0.8);*/
-    /*border: 4px solid #c53535;*/
+    background-size: 11vw;
     align-items: end;
-    font-size: 20px;
+    font-size: 2vw;
     font-weight: bold;
     justify-content: center;
 }
@@ -127,12 +125,11 @@
 }
 .prijzenlijstSelectionOptionBrand{
     display: flex;
-    height: 200px;
-    width: 200px;
-    /*background-color: white;*/
+    height: 14vw;
+    width: 14vw;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 150px;
+    background-size: 11vw;
     align-items: end;
     font-size: 20px;
     font-weight: bold;
