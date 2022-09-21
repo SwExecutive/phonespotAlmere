@@ -8,7 +8,7 @@ include "{$base_dir}db/db_connection.php";
 
 function getAllBrands()
 {
-    $conn = dbConnection();
+    $conn = db_connection();
 
     $query = "SELECT * FROM brand";
     $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
@@ -19,7 +19,7 @@ function getAllBrands()
 
 function getBrand($brandId)
 {
-    $conn = dbConnection();
+    $conn = db_connection();
     $query = "SELECT * FROM brand WHERE id_brand = " . $brandId . "";
     $result = $conn->query($query)->fetch_array();
     $conn->close();
@@ -29,7 +29,7 @@ function getBrand($brandId)
 
 function getAllSeries()
 {
-    $conn = dbConnection();
+    $conn = db_connection();
 
     $query = "SELECT * FROM serie";
     $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
@@ -40,7 +40,7 @@ function getAllSeries()
 
 function getAllPhones()
 {
-    $conn = dbConnection();
+    $conn = db_connection();
 
     $query = "SELECT * FROM device WHERE device_type = 'phone' ORDER BY brand_id ASC, name DESC";
     $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
@@ -51,7 +51,7 @@ function getAllPhones()
 
 function getAllTablets()
 {
-    $conn = dbConnection();
+    $conn = db_connection();
 
     $query = "SELECT * FROM device WHERE device_type = 'tablet' ORDER BY brand_id ASC, name DESC";
     $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
@@ -62,7 +62,7 @@ function getAllTablets()
 
 function getDevice($deviceId)
 {
-    $conn = dbConnection();
+    $conn = db_connection();
 
     $query = "SELECT * FROM device WHERE id_device = " . $deviceId . "";
     $result = $conn->query($query)->fetch_array();
@@ -71,7 +71,7 @@ function getDevice($deviceId)
     return $result;
 }
 function getLastDevice(){
-    $conn = dbConnection();
+    $conn = db_connection();
 
     $query = "SELECT id_device FROM device ORDER BY id_device DESC LIMIT 1;";
     $result = $conn->query($query)->fetch_array();
@@ -80,7 +80,7 @@ function getLastDevice(){
     return $result;
 }
 function getScreens($deviceId){
-    $conn = dbConnection();
+    $conn = db_connection();
 
     $query = "SELECT * FROM screen WHERE id_device = " . $deviceId . " ORDER BY screen_price ASC";
     $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
@@ -90,7 +90,7 @@ function getScreens($deviceId){
 }
 
 function getAllScreens(){
-    $conn = dbConnection();
+    $conn = db_connection();
 
     $query = "SELECT * FROM screen ORDER BY id_device ASC, screen_price ASC";
     $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
@@ -99,7 +99,7 @@ function getAllScreens(){
     return $result;
 }
 function insertScreen($id_device,$screen_name,$screen_price,$active){
-    $conn = dbConnection();
+    $conn = db_connection();
     if (isset($id_device,$screen_name,$screen_price,$active)){
         $query = "INSERT INTO screen (id_device, screen_name, screen_price, active) VALUES (?,?,?,?)";
         $stmt = $conn->prepare($query);
@@ -121,7 +121,7 @@ function insertScreen($id_device,$screen_name,$screen_price,$active){
     $conn->close();
 }
 function updateScreen($id_screen,$id_device,$screen_name,$screen_price,$active){
-    $conn = dbConnection();
+    $conn = db_connection();
     $query = "UPDATE screen SET id_device=?, screen_name=?, screen_price=?, active=? WHERE id_screen=?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("isiii", $id_device,$screen_name,$screen_price,$active,$id_screen);
@@ -132,7 +132,7 @@ function updateScreen($id_screen,$id_device,$screen_name,$screen_price,$active){
 }
 function deleteScreens($deviceId)
 {
-    $conn = dbConnection();
+    $conn = db_connection();
     $query = "DELETE FROM screen WHERE id_device=?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("i",$deviceId);
@@ -147,7 +147,7 @@ function insertDevice($name, $brand_id, $serie_id, $device_img, $inspection,
                       $headphone_jack, $no_wifi, $no_connection, $frame,
                       $volume_button, $charge_port, $microphone, $software,
                       $backlight_chip, $water_damage, $device_type, $screenArray){
-    $conn = dbConnection();
+    $conn = db_connection();
     $query = "INSERT INTO device (name, brand_id, serie_id, device_img, inspection, front_camera, back_camera, power_button, battery, home_button, vibration, speaker, ear_speaker, headphone_jack, no_wifi, no_connection, frame, volume_button, charge_port, microphone, software, backlight_chip, water_damage, device_type) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("ssisiiiiiiiiiiiiiiiiiiis", $name, $brand_id, $serie_id, $device_img, $inspection,
@@ -169,7 +169,7 @@ function updateDevice($deviceId, $name, $brand_id, $serie_id, $device_img, $insp
                       $volume_button, $charge_port, $microphone, $software,
                       $backlight_chip, $water_damage, $device_type, $screenArray){
 
-    $conn = dbConnection();
+    $conn = db_connection();
 
     $query = "UPDATE device SET name=?, brand_id=?, serie_id=?, device_img=?, inspection=?, front_camera=?, back_camera=?, power_button=?, battery=?, home_button=?, vibration=?, speaker=?, ear_speaker=?, headphone_jack=?, no_wifi=?, no_connection=?, frame=?, volume_button=?, charge_port=?, microphone=?, software=?, backlight_chip=?, water_damage=?, device_type=? WHERE id_device=?";
     $stmt = $conn->prepare($query);
@@ -190,7 +190,7 @@ function updateDevice($deviceId, $name, $brand_id, $serie_id, $device_img, $insp
 
 function deleteDevice($deviceId)
 {
-    $conn = dbConnection();
+    $conn = db_connection();
     $query = "DELETE FROM device WHERE id_device=?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("i",$deviceId);
@@ -201,7 +201,7 @@ function deleteDevice($deviceId)
 }
 function insertBrand($brandName,$brandImg){
 
-    $conn = dbConnection();
+    $conn = db_connection();
 
     $query = "INSERT INTO brand (brand_name,brand_img) VALUES (?,?)";
     $stmt = $conn->prepare($query);
@@ -215,7 +215,7 @@ function insertBrand($brandName,$brandImg){
 }
 function updateBrand($brandId,$brandName,$brandImg){
 
-    $conn = dbConnection();
+    $conn = db_connection();
 
     $query = "UPDATE brand SET brand_name=?,  brand_img=? WHERE id_brand=?";
     $stmt = $conn->prepare($query);
@@ -229,7 +229,7 @@ function updateBrand($brandId,$brandName,$brandImg){
 }
 function deleteBrand($brandId)
 {
-    $conn = dbConnection();
+    $conn = db_connection();
     $query = "DELETE FROM brand WHERE id_brand=?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("i",$brandId);

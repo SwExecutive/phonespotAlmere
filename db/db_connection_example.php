@@ -1,6 +1,6 @@
 <?php
 
-function dbConnection(){
+function db_connection(){
     $servername = "";
     $database = "";
     $username = "";

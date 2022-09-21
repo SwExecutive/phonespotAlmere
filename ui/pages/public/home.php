@@ -14,8 +14,8 @@ $phones = getAllPhones();
 $tablets = getAllTablets();
 $allScreens= getAllScreens();
 ?>
-<script src="js/prijzenlijstSurvey.js"></script>
-<link rel="stylesheet" href="../../css/home.css" type="text/css"/>
+<script src="../../../js/prijzenlijstSurvey.js"></script>
+<link rel="stylesheet" href="../../../css/home.css" type="text/css"/>
 
 <div class="contentDiv">
     <div class="phoneHeroDiv">
@@ -57,7 +57,7 @@ $allScreens= getAllScreens();
     </div>
 
     <div class="menuDiv">
-        <a href="index.php?/prijzenlijst" class="menuItemDivLink">
+        <a href="../../../index.php?/prijzenlijst" class="menuItemDivLink">
             <div class="menuItemDiv" id="prijzenlijstMenuItemDiv">
                 <div class="meuItemDivBanner">
                     Prijzenlijst
@@ -178,58 +178,58 @@ $allScreens= getAllScreens();
 </div>
 <style>
     .heroDiv {
-        background-image: url("src/logo/PhonespotalmereMascotteTransparent.png");
+        background-image: url("../../../src/logo/PhonespotalmereMascotteTransparent.png");
     }
 
     #prijzenlijstMenuItemDiv {
-        background-image: url("src/background/prijzenlijst_background.jpg");
+        background-image: url("../../../src/background/prijzenlijst_background.jpg");
     }
 
     #accessoiresMenuItemDiv {
-        background-image: url("src/background/accessoires_background.jpg");
+        background-image: url("../../../src/background/accessoires_background.jpg");
     }
 
     #telefoonsMenuItemDiv {
-        background-image: url("src/background/tefeloons_background.jpg");
+        background-image: url("../../../src/background/tefeloons_background.jpg");
     }
 
     #contactMenuItemDiv {
-        background-image: url("src/background/contact_background.jpg");
+        background-image: url("../../../src/background/contact_background.jpg");
     }
 
     .timerDivIcon {
-        background-image: url("src/icon/timer_icon.svg");
+        background-image: url("../../../src/icon/timer_icon.svg");
 
     }
 
     .splitterDivHero {
-        background-image: url("src/logo/PhonespotalmereMascotteHeadTransparent.png");
+        background-image: url("../../../src/logo/PhonespotalmereMascotteHeadTransparent.png");
     }
 
     .tutorialDivBackground {
-        background-image: url("src/background/dark_stripes.png");
+        background-image: url("../../../src/background/dark_stripes.png");
     }
 
     #tutorialDivStep1 {
-        background-image: url("src/background/step1_background.png");
+        background-image: url("../../../src/background/step1_background.png");
     }
 
     #tutorialDivStep2 {
-        background-image: url("src/background/step2_background.jpg");
+        background-image: url("../../../src/background/step2_background.jpg");
 
     }
 
     #tutorialDivStep3 {
-        background-image: url("src/background/step3_background.jpg");
+        background-image: url("../../../src/background/step3_background.jpg");
 
     }
 
     .openingTimeDivInfoIcon {
-        background-image: url("src/icon/clock_icon.svg");
+        background-image: url("../../../src/icon/clock_icon.svg");
     }
 
     .locationDivInfoIcon {
-        background-image: url("src/icon/location_icon.svg");
+        background-image: url("../../../src/icon/location_icon.svg");
     }
 </style>
 <script>

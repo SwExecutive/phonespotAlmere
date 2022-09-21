@@ -11,13 +11,13 @@ $tablets = getAllTablets();
 $allScreens= getAllScreens();
 
 ?>
-<script src="js/prijzenlijstSurvey.js"></script>
-<link rel="stylesheet" href="../../css/prijzenlijst.css" type="text/css"/>
+<script src="../../../js/prijzenlijstSurvey.js"></script>
+<link rel="stylesheet" href="../../../css/prijzenlijst.css" type="text/css"/>
 
 <div class="contentDiv">
     <div class="prijzenlijstTitleDiv">
         <div class="prijzenlijstTitleLogo"></div>
-        <a href="index.php?/prijzenlijst" class="prijzenlijstTitle">
+        <a href="../../../index.php?/prijzenlijst" class="prijzenlijstTitle">
             Prijzenlijst
         </a>
     </div>
@@ -196,20 +196,20 @@ $allScreens= getAllScreens();
 
 <style>
     .prijzenlijstTitle {
-        background-image: url("src/logo/PhonespotalmereMascotteTransparent.png");
-        border-image: url("src/background/dark_stripes.png");
+        background-image: url("../../../src/logo/PhonespotalmereMascotteTransparent.png");
+        border-image: url("../../../src/background/dark_stripes.png");
         border-image-repeat: repeat;
     }
 
     #phone {
-        background-image: url("src/icon/iphone_smartphone_icon.svg");
+        background-image: url("../../../src/icon/iphone_smartphone_icon.svg");
     }
 
     #tablet {
-        background-image: url("src/icon/ipad_tablet_icon.svg");
+        background-image: url("../../../src/icon/ipad_tablet_icon.svg");
     }
 
     #laptop {
-        background-image: url("src/icon/mac_laptop_icon.svg");
+        background-image: url("../../../src/icon/mac_laptop_icon.svg");
     }
 </style>
