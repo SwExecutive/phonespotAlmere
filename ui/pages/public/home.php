@@ -8,7 +8,6 @@ $phoneSpotAlmere = new PhoneSpotAlmere();
 
 $openingTimes = $phoneSpotAlmere->openingTimes;
 
-//echo phpinfo();
 $brands = getAllBrands();
 $phones = getAllPhones();
 $tablets = getAllTablets();
@@ -243,28 +242,10 @@ $allScreens= getAllScreens();
         const questionListBuy = ["Selecteer uw apparaattype", "Selecteer uw merk", "Selecteer uw apparaat"]
         const questionListAccessory = ["Selecteer uw apparaattype", "Selecteer uw merk", "Selecteer uw apparaat"]
         const questionListElse = ["Selecteer uw apparaattype", "Selecteer uw merk", "Selecteer uw apparaat"]
-        const services = [];
-        services['inspection'] = "Inspectie + offerte";
-        services['front_camera'] = "Frontcamera reparatie";
-        services['back_camera'] = "Backcamera reparatie";
-        services['power_button'] = "Batterij vervangen";
-        services['battery'] = "Batterij vervangen";
-        services['home_button'] = "Homeknop vervangen";
-        services['vibration'] = "Trilknop vervangen";
-        services['speaker'] = "Speaker vervangen";
-        services['ear_speaker'] = "Ear speaker vervangen";
-        services['headphone_jack'] = "Jack ingang vervangen";
-        services['no_wifi'] = "Slecht of geen wifi bereik";
-        services['no_connection'] = "Slecht of geen netwerk";
-        services['frame'] = "Behuizing vervangen";
-        services['volume_button'] = "Volumenknop reparatie";
-        services['charge_port'] = "Oplaadconnector reparatie";
-        services['microphone'] = "Microfoon reparatie";
-        services['software'] = "Software probleem";
-        services['backlight_chip'] = "Backlight chip reparatie";
-        services['water_damage'] = "Waterschade reparatie";
 
-        //When user clicks on phone item
+        const services = deviceServices();
+
+        //When user clicks on repair item
         $("#repair").click(function () {
             //Remove devicetype selection group. Bring out brand selectionscreen.
             $(".questionDiv").text(questionListRepair[0])
