@@ -3,7 +3,7 @@
 //Makes sure the correct path is laid out for different files that access phonespotRepository.
 $ds = DIRECTORY_SEPARATOR;
 $base_dir = realpath(dirname(__FILE__) . $ds . '..') . $ds;
-include "{$base_dir}db/dbConnection.php";
+include "{$base_dir}db/db_connection.php";
 
 
 function getAllBrands()
