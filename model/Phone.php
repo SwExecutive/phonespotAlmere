@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * Phone - Contains phone information (for later usage).
+ *
+ */
 class Phone{
     public String $phoneName;
     public String $brandName;

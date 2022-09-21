@@ -1,4 +1,8 @@
 <?php
+/**
+ * PhonespotAlmere - Standard static company information.
+ *
+ */
 
 class phonespotAlmere
 {

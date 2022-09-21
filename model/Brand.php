@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * Brand - Contains brand information.(for later usage)
+ *
+ */
 class Brand
 {
     public string $name;

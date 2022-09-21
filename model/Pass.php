@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Pass - Contains admin login information. Won't be passed to client.
+ *
+ */
 class Pass
 {
     public string $username;
