@@ -12,7 +12,7 @@ $allScreens= getAllScreens();
 
 ?>
 <script src="../../../js/prijzenlijstSurvey.js"></script>
-<link rel="stylesheet" href="../../../css/prijzenlijst.css" type="text/css"/>
+<link rel="stylesheet" href="../../../css/public/prijzenlijst.css" type="text/css"/>
 
 <div class="contentDiv">
     <div class="prijzenlijstTitleDiv">

@@ -15,7 +15,7 @@ $tablets = getAllTablets();
 $allScreens= getAllScreens();
 ?>
 <script src="../../../js/prijzenlijstSurvey.js"></script>
-<link rel="stylesheet" href="../../../css/home.css" type="text/css"/>
+<link rel="stylesheet" href="../../../css/public/home.css" type="text/css"/>
 
 <div class="contentDiv">
     <div class="phoneHeroDiv">

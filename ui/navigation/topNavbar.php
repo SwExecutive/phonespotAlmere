@@ -4,7 +4,7 @@ include "model/PhonespotAlmere.php";
 
 $phonespotAlmere = new phonespotAlmere()
 ?>
-<link rel="stylesheet" href="../../css/topNavbar.css" type="text/css"/>
+<link rel="stylesheet" href="../../css/public/topNavbar.css" type="text/css"/>
 
 <div class="navbarDiv">
     <div class="topNavbarDiv">
