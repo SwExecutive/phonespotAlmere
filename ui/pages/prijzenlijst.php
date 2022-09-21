@@ -8,7 +8,7 @@ $phoneSpotAlmere = new PhoneSpotAlmere();
 $brands = getAllBrands();
 $phones = getAllPhones();
 $tablets = getAllTablets();
-
+$allScreens= getAllScreens();
 
 ?>
 <script src="js/prijzenlijstSurvey.js"></script>
@@ -63,6 +63,8 @@ $tablets = getAllTablets();
         const brands = <?php echo json_encode($brands); ?>;
         const phones = <?php echo json_encode($phones); ?>;
         const tablets = <?php echo json_encode($tablets); ?>;
+        const allScreens = <?php echo json_encode($allScreens); ?>;
+
         const questionList = ["Selecteer uw apparaattype", "Selecteer uw merk", "Selecteer uw apparaat"]
         const services = [];
         services['inspection'] = "Inspectie + offerte";
@@ -86,7 +88,11 @@ $tablets = getAllTablets();
         services['water_damage'] = "Waterschade reparatie";
 
         //When user clicks on phone item
-        $("#phone").click(function () {
+        $("#phone, #tablet").click(function () {
+
+            //Save the clicked upon element
+            var clickedBtnId = $(this).attr('id');
+
             //Remove devicetype selection group. Bring out brand selectionscreen.
             $("#prijzenlijstSelectionGroup1").css("display", "none")
             $("#prijzenlijstSelectionGroup2").css("display", "flex")
@@ -108,28 +114,63 @@ $tablets = getAllTablets();
                     $("#prijzenlijstSelectionGroup3").css("display", "flex")
                     $("#prijzenlijstinstruction").empty().text(questionList[2]);
 
-                    $.each(phones, function (phoneIndex, phoneItem) {
-                        if (event.target.id === phoneItem["brand_id"]) {
+                    //Assign the selected devicetype array to one array.
+                    var selectedTypeDevices;
+                    switch (clickedBtnId){
+                        case "phone":
+                            selectedTypeDevices = phones;
+                            break;
+
+                        case "tablet":
+                            selectedTypeDevices = tablets;
+                            break;
+
+                        case "laptop":
+                            selectedTypeDevices = laptops;
+                    }
+
+                    $.each(selectedTypeDevices, function (deviceIndex, deviceItem) {
+                        if (event.target.id === deviceItem["brand_id"]) {
 
                             var deviceDiv = $('<div></div>')
                             $("#prijzenlijstSelectionGroup3").append(deviceDiv);
-                            deviceDiv.attr('id', "device" + phoneItem['id_device'])
+                            deviceDiv.attr('id', "device" + deviceItem['id_device'])
                             deviceDiv.attr('class', 'prijzenlijstSelectionOptionDevice')
-                            $("#" + "device" + phoneItem['id_device']).css("background-image", "url('src/devices/" + phoneItem['device_img'] + "')").text(phoneItem['name'])
+                            $("#" + "device" + deviceItem['id_device']).css("background-image", "url('src/devices/" + deviceItem['device_img'] + "')").text(deviceItem['name'])
 
                             deviceDiv.click(function (event){
-                                $("#prijzenlijstinstruction").empty().text(phoneItem['name']);
+                                $("#prijzenlijstinstruction").empty().text(deviceItem['name']);
                                 $(".prijzenlijstSelectionDiv").css("height", "40%");
                                 $("#prijzenlijstSelectionGroup3").css("display", "none")
                                 $("#prijzenlijstSelectionGroup4").css("display", "flex")
-                                $("#deviceDetailImg").css("background-image", "url('src/devices/" + phoneItem['device_img'] + "')")
+                                $("#deviceDetailImg").css("background-image", "url('src/devices/" + deviceItem['device_img'] + "')")
 
-                                $.each(phoneItem, function (phoneDetailIndex, phoneDetailItem){
-                                    if (services[phoneDetailIndex]){
+                                //Make an array consisting of all screens that correspond with the selected device.
+                                const deviceScreens = allScreens.filter(x=> deviceItem['id_device']===x['id_device']&&x['active']==='1');
+                                //Loop through all screens corresponding with the selected device.
+                                $.each(deviceScreens, function (deviceScreenIndex, deviceScreenItem){
+                                    var deviceDetailInfoRowWrapper = $('<div></div>');
+                                    var deviceDetailInfoRow =  $('<div></div>');
+                                    var deviceDetailInfoRowName = $('<div>'+deviceScreenItem["screen_name"]+'</div>');
+                                    var deviceDetailInfoRowValue = $('<div>'+handlePrice(deviceScreenItem["screen_price"])+'</div>');
+
+                                    deviceDetailInfoRowWrapper.attr('class', 'deviceDetailInfoRowWrapper')
+                                    deviceDetailInfoRow.attr('class', 'deviceDetailInfoRow');
+                                    deviceDetailInfoRowName.attr('class', 'deviceDetailInfoRowName');
+                                    deviceDetailInfoRowValue.attr('class', 'deviceDetailInfoRowValue');
+
+                                    deviceDetailInfoRow.append(deviceDetailInfoRowName).append(deviceDetailInfoRowValue);
+                                    deviceDetailInfoRowWrapper.append(deviceDetailInfoRow);
+                                    $("#prijzenlijstSelectionGroup4").append(deviceDetailInfoRowWrapper);
+
+                                });
+
+                                $.each(deviceItem, function (deviceDetailIndex, deviceDetailItem){
+                                    if (services[deviceDetailIndex]){
                                         var deviceDetailInfoRowWrapper = $('<div></div>');
                                         var deviceDetailInfoRow =  $('<div></div>');
-                                        var deviceDetailInfoRowName = $('<div>'+services[phoneDetailIndex]+'</div>');
-                                        var deviceDetailInfoRowValue = $('<div>'+handlePrice(phoneDetailItem)+'</div>');
+                                        var deviceDetailInfoRowName = $('<div>'+services[deviceDetailIndex]+'</div>');
+                                        var deviceDetailInfoRowValue = $('<div>'+handlePrice(deviceDetailItem)+'</div>');
 
                                         deviceDetailInfoRowWrapper.attr('class', 'deviceDetailInfoRowWrapper')
                                         deviceDetailInfoRow.attr('class', 'deviceDetailInfoRow');
@@ -146,73 +187,6 @@ $tablets = getAllTablets();
                         }
                     })
                 });
-            });
-        })
-
-        //When user clicks on phone item
-        $("#tablet").click(function () {
-            //Remove devicetype selection group. Bring out brand selectionscreen.
-            $("#prijzenlijstSelectionGroup1").css("display", "none")
-            $("#prijzenlijstSelectionGroup2").css("display", "flex")
-            //Change question from select devicetype to select brand.
-            $("#prijzenlijstinstruction").empty().text(questionList[1]);
-
-            //For each displayed brand add styling, a general styling class and a unique id for identification.
-            $.each(brands, function (index, item) {
-                $(".prijzenlijstSelectionDiv").css("height", "30%");
-                var e = $('<div></div>')
-                $("#prijzenlijstSelectionGroup2").append(e);
-                e.attr('id', brands[index]['id_brand'])
-                e.attr('class', 'prijzenlijstSelectionOptionBrand')
-                $("#" + brands[index]['id_brand']).css("background-image", "url('src/devicebrands/" + brands[index]['brand_img'] + "')")
-
-                //For each brand that is retrieved add an onclick listener
-                e.click(function (event) {
-                    $("#prijzenlijstSelectionGroup2").css("display", "none")
-                    $("#prijzenlijstSelectionGroup3").css("display", "flex")
-                    $("#prijzenlijstinstruction").empty().text(questionList[2]);
-
-                    $.each(tablets, function (tabletIndex, tabletItem) {
-                        if (event.target.id === tabletItem["brand_id"]) {
-
-                            var deviceDiv = $('<div></div>')
-                            $("#prijzenlijstSelectionGroup3").append(deviceDiv);
-                            deviceDiv.attr('id', "device" + tabletItem['id_device'])
-                            deviceDiv.attr('class', 'prijzenlijstSelectionOptionDevice')
-                            $("#" + "device" + tabletItem['id_device']).css("background-image", "url('src/devices/" + tabletItem['device_img'] + "')").text(tabletItem['name'])
-
-                            deviceDiv.click(function (event){
-                                $("#prijzenlijstinstruction").empty().text(tabletItem['name']);
-                                $(".prijzenlijstSelectionDiv").css("height", "40%");
-                                $("#prijzenlijstSelectionGroup3").css("display", "none")
-                                $("#prijzenlijstSelectionGroup4").css("display", "flex")
-                                $("#deviceDetailImg").css("background-image", "url('src/devices/" + tabletItem['device_img'] + "')")
-
-                                $.each(tabletItem, function (tabletDetailIndex, tabletDetailItem){
-                                    if (services[tabletDetailIndex]){
-                                        var deviceDetailInfoRowWrapper = $('<div></div>');
-                                        var deviceDetailInfoRow =  $('<div></div>');
-                                        var deviceDetailInfoRowName = $('<div>'+services[tabletDetailIndex]+'</div>');
-                                        var deviceDetailInfoRowValue = $('<div>'+handlePrice(tabletDetailItem)+'</div>');
-
-                                        deviceDetailInfoRowWrapper.attr('class', 'deviceDetailInfoRowWrapper')
-                                        deviceDetailInfoRow.attr('class', 'deviceDetailInfoRow');
-                                        deviceDetailInfoRowName.attr('class', 'deviceDetailInfoRowName');
-                                        deviceDetailInfoRowValue.attr('class', 'deviceDetailInfoRowValue');
-
-                                        deviceDetailInfoRow.append(deviceDetailInfoRowName).append(deviceDetailInfoRowValue);
-                                        deviceDetailInfoRowWrapper.append(deviceDetailInfoRow);
-                                        $("#prijzenlijstSelectionGroup4").append(deviceDetailInfoRowWrapper);
-
-                                    }
-                                })
-                            });
-                        }
-                    })
-                });
-            // if (){
-            //     return false
-            // }
             });
         })
 

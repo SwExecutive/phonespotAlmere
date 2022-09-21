@@ -377,7 +377,6 @@ $allScreens= getAllScreens();
                                         deviceDetailInfoRowWrapper.append(deviceDetailInfoRow);
                                         $(".phoneHeroDivBackground").append(deviceDetailInfoRowWrapper);
 
-                                        console.log(deviceScreenItem["screen_name"])
                                     });
                                     $.each(deviceItem, function (deviceDetailIndex, deviceDetailItem){
                                         //If the service exists then make the deviceDetailInfoRowWrapper.
