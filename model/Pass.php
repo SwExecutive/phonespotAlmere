@@ -11,8 +11,8 @@ class Pass
 
     public function __construct()
     {
-        $this->username = "Phone1Raf";
-        $this->pass = "0zkAAm220?!";
+        $this->username = "PhoneSpot";
+        $this->pass = "F0zkTMn251!";
     }
 
 

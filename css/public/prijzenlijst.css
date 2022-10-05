@@ -88,7 +88,7 @@
     display: none;
     height: 100%;
     width: 80%;
-    align-content: center;
+    align-content: flex-start;
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
@@ -97,10 +97,11 @@
     display: none;
     height: 100%;
     width: 80%;
-    align-content: center;
+    align-content: flex-start;
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
+    overflow-y: auto;
 }
 
 
