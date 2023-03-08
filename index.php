@@ -15,7 +15,7 @@ $url = "";
 
 include "ui/navigation/topNavbar.php";
 include getPage($url);
-include "ui/navigation/bottomNavbar.php";
+//include "ui/navigation/bottomNavbar.php";
 ?>
 </body>
 </html>
