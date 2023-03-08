@@ -39,6 +39,7 @@ if (isset($_POST['deleteButton'])){
             trimAndCast($_POST['backlight_chip']),
             trimAndCast($_POST['water_damage']),
             $_POST['device_type'],
+            trimAndCast($_POST['buildyear']),
             "Tijdelijk",
         );
         $screens=getScreens(trimAndCast($_POST['id_device']));
@@ -109,6 +110,7 @@ if (isset($_POST['deleteButton'])){
                 trimAndCast($_POST['backlight_chip']),
                 trimAndCast($_POST['water_damage']),
                 $_POST['device_type'],
+                trimAndCast($_POST['buildyear']),
                 "Tijdelijk",
             );
                 $screens=getScreens(trimAndCast($_POST['id_device']));
@@ -142,6 +144,7 @@ if (isset($_POST['deleteButton'])){
                     trimAndCast($_POST['backlight_chip']),
                     trimAndCast($_POST['water_damage']),
                     $_POST['device_type'],
+                    trimAndCast($_POST['buildyear']),
                     "Tijdelijk",
                 );
                 $lastDeviceId = getLastDevice()[0];

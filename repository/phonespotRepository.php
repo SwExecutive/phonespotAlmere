@@ -69,7 +69,7 @@ function getAllPhones()
 {
     $conn = db_connection();
 
-    $query = "SELECT * FROM device WHERE device_type = 'phone' ORDER BY brand_id ASC, name DESC";
+    $query = "SELECT * FROM device WHERE device_type = 'phone' ORDER BY brand_id ASC,buildyear DESC, name DESC";
     $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
     $conn->close();
 
@@ -267,17 +267,17 @@ function insertDevice($name, $brand_id, $serie_id, $device_img, $inspection,
                       $home_button, $vibration, $speaker, $ear_speaker,
                       $headphone_jack, $no_wifi, $no_connection, $frame,
                       $volume_button, $charge_port, $microphone, $software,
-                      $backlight_chip, $water_damage, $device_type, $screenArray)
+                      $backlight_chip, $water_damage, $device_type, $buildyear, $screenArray)
 {
     $conn = db_connection();
-    $query = "INSERT INTO device (name, brand_id, serie_id, device_img, inspection, front_camera, back_camera, power_button, battery, home_button, vibration, speaker, ear_speaker, headphone_jack, no_wifi, no_connection, frame, volume_button, charge_port, microphone, software, backlight_chip, water_damage, device_type) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    $query = "INSERT INTO device (name, brand_id, serie_id, device_img, inspection, front_camera, back_camera, power_button, battery, home_button, vibration, speaker, ear_speaker, headphone_jack, no_wifi, no_connection, frame, volume_button, charge_port, microphone, software, backlight_chip, water_damage, device_type, buildyear) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param("ssisiiiiiiiiiiiiiiiiiiis", $name, $brand_id, $serie_id, $device_img, $inspection,
+    $stmt->bind_param("ssisiiiiiiiiiiiiiiiiiiisi", $name, $brand_id, $serie_id, $device_img, $inspection,
         $front_camera, $back_camera, $power_button, $battery,
         $home_button, $vibration, $speaker, $ear_speaker,
         $headphone_jack, $no_wifi, $no_connection, $frame,
         $volume_button, $charge_port, $microphone, $software,
-        $backlight_chip, $water_damage, $device_type);
+        $backlight_chip, $water_damage, $device_type, $buildyear);
     $stmt->execute();
 
     $stmt->close();
@@ -320,19 +320,19 @@ function updateDevice($deviceId, $name, $brand_id, $serie_id, $device_img, $insp
                       $home_button, $vibration, $speaker, $ear_speaker,
                       $headphone_jack, $no_wifi, $no_connection, $frame,
                       $volume_button, $charge_port, $microphone, $software,
-                      $backlight_chip, $water_damage, $device_type, $screenArray)
+                      $backlight_chip, $water_damage, $device_type, $buildyear, $screenArray)
 {
 
     $conn = db_connection();
 
-    $query = "UPDATE device SET name=?, brand_id=?, serie_id=?, device_img=?, inspection=?, front_camera=?, back_camera=?, power_button=?, battery=?, home_button=?, vibration=?, speaker=?, ear_speaker=?, headphone_jack=?, no_wifi=?, no_connection=?, frame=?, volume_button=?, charge_port=?, microphone=?, software=?, backlight_chip=?, water_damage=?, device_type=? WHERE id_device=?";
+    $query = "UPDATE device SET name=?, brand_id=?, serie_id=?, device_img=?, inspection=?, front_camera=?, back_camera=?, power_button=?, battery=?, home_button=?, vibration=?, speaker=?, ear_speaker=?, headphone_jack=?, no_wifi=?, no_connection=?, frame=?, volume_button=?, charge_port=?, microphone=?, software=?, backlight_chip=?, water_damage=?, device_type=?, buildyear=? WHERE id_device=?";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param("ssisiiiiiiiiiiiiiiiiiiisi", $name, $brand_id, $serie_id, $device_img, $inspection,
+    $stmt->bind_param("ssisiiiiiiiiiiiiiiiiiiisii", $name, $brand_id, $serie_id, $device_img, $inspection,
         $front_camera, $back_camera, $power_button, $battery,
         $home_button, $vibration, $speaker, $ear_speaker,
         $headphone_jack, $no_wifi, $no_connection, $frame,
         $volume_button, $charge_port, $microphone, $software,
-        $backlight_chip, $water_damage, $device_type, $deviceId);
+        $backlight_chip, $water_damage, $device_type, $buildyear, $deviceId);
     $stmt->execute();
     printf($deviceId);
     print($stmt->affected_rows);

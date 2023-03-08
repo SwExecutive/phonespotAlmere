@@ -168,6 +168,11 @@ $brands = getAllBrands();
                 <input type="number" name="water_damage" placeholder="Waterschade" id="water_damage" class="deviceInput" value="<?php echo $device['water_damage']?>">
 
             </div>
+        <div class="inputcontainer">
+            <div class="deviceInputName">Bouwjaar</div>
+            <input type="number" name="buildyear" placeholder="Bouwjaar" id="buildyear" class="deviceInput" value="<?php echo $device['buildyear']?>">
+
+        </div>
              <div class="inputcontainer">
                  <div class="deviceInputName">Apparaattype</div>
                  <select name="device_type" id="device_type" class="deviceInput">
