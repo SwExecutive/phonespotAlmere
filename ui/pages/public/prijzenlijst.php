@@ -82,7 +82,7 @@ $allScreens= getAllScreens();
 
             //For each displayed brand add styling, a general styling class and a unique id for identification.
             $.each(brands, function (index, item) {
-                $(".prijzenlijstSelectionDiv").css("height", "50%");
+                $(".prijzenlijstSelectionDiv").css("height", "80%");
                 var e = $('<div></div>')
                 $("#prijzenlijstSelectionGroup2").append(e);
                 e.attr('id', brands[index]['id_brand'])

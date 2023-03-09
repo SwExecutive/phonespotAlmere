@@ -24,7 +24,7 @@ $allScreens= getAllScreens();
             <div class="phoneHeroDivTop">
                 <div>
                     <div class="questionDiv">
-                        Welkom! Waarmee kan ik u helpen?
+                        Welkom! Selecteer waarmee ik u kan helpen.
                     </div>
                     <div class="questionDivPointer"></div>
                 </div>
@@ -36,13 +36,13 @@ $allScreens= getAllScreens();
                 </div>
                 <div class="answersDiv">
                     <div id="repair" class="answerButton">
-                        Ik wil mijn apparaat laten repareren
+                        Apparaat repareren
                     </div>
                     <div id="accessory" class="answerButton">
-                        Ik zoek een accessoire voor mijn telefoon
+                        Telefoon accessoire
                     </div>
                     <div id="buy" class="answerButton">
-                        Ik wil een telefoon kopen
+                        Telefoon kopen
                     </div>
                     <div id="else" class="answerButton">
                         Overig

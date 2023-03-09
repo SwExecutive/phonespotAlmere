@@ -132,7 +132,7 @@
 .answerButton{
     display: flex;
     width: 40%;
-    height: 40%;
+    height: 30%;
     border-radius: 20px;
     margin: auto;
     font-size: 22px;
@@ -141,7 +141,7 @@
     align-content: center;
     align-items: center;
     background-color: white;
-    font-weight: normal;
+    font-weight: bold;
 
 }
 .answerButton:hover{
@@ -571,4 +571,33 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+@media screen and (max-width: 1000px) {
+    .phoneHeroDiv{
+        display: flex;
+        flex-wrap: wrap;
+        width: 800px;
+        height: 580px;
+        margin-top: 20px;
+        justify-content: center;
+        overflow: visible;
+    }
+    .heroDiv{
+        transform: translate(-40px,-50px);
+    }
+    .answerButton{
+        display: flex;
+        width: 40%;
+        height: 30%;
+        border-radius: 20px;
+        margin: auto;
+        font-size: 20px;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        background-color: white;
+        font-weight: normal;
+    }
 }
